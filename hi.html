@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brew Bliss - Online Coffee Shop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background-color: #f8f8f8;
+      border-bottom: 2px solid black;
+    }
+
+    header img {
+      width: 100px;
+      height: 100px;
+    }
+
+    header h1 {
+      flex-grow: 1;
+      text-align: center;
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px;
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+      background-color: #fff;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .search-box {
+      padding: 5px;
+      width: 200px;
+    }
+
+    .skills-video {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .skills {
+      flex: 1;
+      max-width: 300px;
+    }
+
+    .video-audio {
+      flex: 1;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    video, audio {
+      display: block;
+      margin-bottom: 20px;
+      width: 100%;
+      height: auto;
+    }
+
+    .forms-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .form-section {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      margin-top: 10px;
+      padding: 10px 15px;
+    }
+
+    .media-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      border-top: 2px solid black;
+    }
+
+    .media-section iframe {
+      flex: 1;
+      min-width: 300px;
+      height: 300px;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/coffee-shop-logos-design-template-cda8575e146cc5ba17cd3c1a24d65ba1_screen.jpg?ts=1638177256" alt="Coffee Shop Logo"> 
+    <h1>Brew Bliss - Online Coffee Shop</h1> 
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#location">Location</a>
+    <input type="search" placeholder="Search coffee..." class="search-box">
+  </nav>
+
+  <!-- Skills and Video/Audio -->
+  <section class="skills-video"> 
+    <div class="skills">
+      <p>Espresso</p>
+      <progress value="95" max="100"></progress>
+      <p>Cappuccino</p>
+      <progress value="90" max="100"></progress>
+      <p>Latte</p>
+      <progress value="85" max="100"></progress>
+      <p>Cold Brew</p>
+      <progress value="80" max="100"></progress>
+    </div>
+
+    <div class="video-audio">
+      <video controls>
+        <source src="coffee-video.mp4" type="video/mp4">
+      </video>
+
+      <audio controls>
+        <source src="coffee-music.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </section>
+
+  <!-- Forms -->
+  <div class="forms-container">
+    <!-- Order Form -->
+    <form id="menu" class="form-section" action="#" method="post" enctype="multipart/form-data">
+      <fieldset>
+        <legend>Order Your Coffee</legend>
+
+        <label for="name">Customer Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required>
+
+        <label for="coffee">Select Coffee</label>
+        <select name="coffee" required>
+          <option value="">Choose</option>
+          <option>Espresso</option>
+          <option>Cappuccino</option>
+          <option>Latte</option>
+          <option>Cold Brew</option>
+        </select>
+
+        <label for="size">Size</label>
+        <input type="radio" name="size" value="Small" required> Small
+        <input type="radio" name="size" value="Medium" required> Medium
+        <input type="radio" name="size" value="Large" required> Large
+
+        <label for="sugar">Sugar Level</label>
+        <input type="range" name="sugar" min="0" max="5">
+
+        <label for="photo">Upload Receipt Photo (optional)</label>
+        <input type="file" name="photo">
+      </fieldset>
+    </form>
+
+    <!-- Contact Form -->
+    <form class="form-section" action="#" method="post" enctype="multipart/form-data">
+      <fieldset>
+        <legend>Contact Information</legend>
+
+        <label for="address">Address</label>
+        <textarea name="address" placeholder="Enter your delivery address" required></textarea>
+
+        <label for="state">State</label>
+        <select name="state" required>
+          <option value="">Select</option>
+          <option>Tamil Nadu</option>
+          <option>Kerala</option>
+          <option>Karnataka</option>
+        </select>
+
+        <label for="zipcode">Pincode</label>
+        <input type="text" name="zipcode" maxlength="6" required>
+
+        <label for="phone">Mobile</label>
+        <input type="tel" name="phone" maxlength="10" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" required>
+
+        <label for="url">Website</label>
+        <input type="url" name="url" placeholder="https://">
+
+        <input type="checkbox" required> I agree to terms<br><br>
+        <input type="submit" value="Place Order">
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- PDF & Map -->
+  <section id="location" class="media-section"> 
+    <iframe src="coffee-menu.pdf"></iframe>
+    <iframe src="https://www.google.com/maps?q=coffee+shop+near+me&output=embed"></iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    Brew Bliss Coffee Shop, India<br>
+    &copy; 2025. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
