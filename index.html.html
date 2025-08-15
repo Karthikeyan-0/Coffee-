@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew Bliss | Online Coffee Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo-container">
+            <img src="https://png.pngtree.com/template/20191011/ourmid/pngtree-a-cup-of-coffee-logo-design-image_317567.jpg" alt="Coffee Shop Logo" class="logo">
+            <h1 class="nav-title">Brew Bliss Coffee</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#order">Order</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="landing-content">
+            <h1>Freshly Brewed Happiness</h1>
+            <p>Welcome to Brew Bliss, where every cup is crafted with love and passion. Order online and get your favorite coffee delivered fresh to your doorstep.</p>
+            <a href="#order" class="cta-button">Order Now</a>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-container">
+            <h2>Customer Login</h2>
+            <form>
+                <div class="form-group">
+                    <label for="username">Email</label>
+                    <input type="text" id="username" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+            <div class="form-footer">
+                <p>New customer? <a href="#order">Create an account</a></p>
+                <p><a href="#">Forgot password?</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Brew Bliss</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Brew Bliss was founded with a simple mission — to bring the freshest, most flavorful coffee to your cup. Our beans are sourced from the best farms, roasted to perfection, and brewed with care.</p>
+                <br>
+                <p>We believe coffee is more than just a drink — it’s a daily ritual, a conversation starter, and a source of comfort. That’s why we take pride in every cup we serve.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://www.decorilla.com/online-decorating/wp-content/uploads/2021/12/Cozy-white-coffee-shop-interior-design.jpg" alt="Coffee Shop Interior">
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+<section id="menu">
+  <h2 class="section-title">Our Coffee Menu</h2>
+  <div class="programs-container">
+
+    <div class="program-card">
+      <img src="https://m.media-amazon.com/images/I/711zluaUqYL._UF350,350_QL80_.jpg" alt="Various coffees">
+      <h3>Espresso & Classic Drinks</h3>
+      <p>Espresso</p>
+      <p>Americano</p>
+      <p>Cappuccino</p>
+      <p>Latte</p>
+    </div>
+
+    <div class="program-card">
+      <img src="https://m.media-amazon.com/images/I/71kIjl1HqpL._UF350,350_QL80_.jpg" alt="Layered latte">
+      <h3>Specialty Drinks</h3>
+      <p>Caramel Macchiato</p>
+      <p>Mocha</p>
+      <p>Flat White</p>
+      <p>Irish Coffee</p>
+    </div>
+
+    <div class="program-card">
+      <img src="https://allthehealthythings.com/wp-content/uploads/2025/07/ATH-How-to-Make-Iced-Coffee-3-350x350.jpg" alt="Iced coffee">
+      <h3>Cold Brews & Refreshers</h3>
+      <p>Cold Brew</p>
+      <p>Iced Latte</p>
+      <p>Vanilla Cold Foam</p>
+      <p>Chocolate Frappe</p>
+    </div>
+
+
+  </div>
+</section>
+
+    <!-- Order Form Section -->
+    <section id="order">
+        <h2 class="section-title">Place Your Order</h2>
+        <form method="POST" enctype="multipart/form-data" class="application-form">
+            <!-- Customer Info -->
+            <fieldset>
+                <legend>Customer Information</legend>
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" required>
+
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" required>
+            </fieldset>
+
+            <!-- Order Details -->
+            <fieldset>
+                <legend>Order Details</legend>
+                <label for="coffee">Select Coffee:</label>
+                <select id="coffee" required>
+                    <option value="">Select</option>
+                    <option>Espresso</option>
+                    <option>Latte</option>
+                    <option>Cappuccino</option>
+                    <option>Cold Brew</option>
+                </select>
+
+                <label for="size">Size:</label>
+                <select id="size" required>
+                    <option value="">Select</option>
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                </select>
+
+                <label for="instructions">Special Instructions:</label>
+                <textarea id="instructions" rows="3"></textarea>
+            </fieldset>
+
+            <!-- Confirmation -->
+            <fieldset>
+                <legend>Confirmation</legend>
+                <label>
+                    <input type="checkbox" required>
+                    I confirm that the above details are correct.
+                </label>
+            </fieldset>
+
+            <button type="submit">Submit Order</button>
+        </form>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Brew Bliss Coffee</h3>
+                <p>123 Coffee Street</p>
+                <p>Bean Town, Brewland - 555123</p>
+                <p>Phone: +91 9876543210</p>
+                <p>Email: hello@brewbliss.com</p>
+                <h3>Hours</h3>
+                <p>Mon-Fri: 7:00 AM - 9:00 PM</p>
+                <p>Sat-Sun: 8:00 AM - 10:00 PM</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Enter subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
