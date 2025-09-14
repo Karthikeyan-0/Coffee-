@@ -1,84 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brew Bliss - Online Coffee Shop</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew Bliss Coffee Shop</title>
 </head>
 <body>
 
-  <header>
-    <h1>Brew Bliss Coffee</h1>
-    <input type="text" placeholder="Search coffee..." />
-  </header>
+  <header>BREW BLISS COFFEE SHOP</header>
 
-  <section class="banner">
-    <img src="https://png.pngtree.com/template/20220427/ourlarge/pngtree-coffee-banner-with-3d-illustratin-latte-and-woodcut-style-decorations-image_1468469.jpg" alt="Coffee Shop Banner" />
-  </section>
-
-  <section class="welcome">
-    <h2>Welcome to Brew Bliss</h2>
-    <p>We serve handcrafted coffee brewed with passion and perfection. Whether you're a latte lover or espresso enthusiast, your coffee adventure starts here.</p>
-  </section>
-
-  <section class="gallery">
-    <div class="gallery-item">
-      <img src="https://www.caffesociety.co.uk/assets/recipe-images/espresso-small.jpg" alt="Espresso" />
-      <p>Espresso</p>
-    </div>
-    <div class="gallery-item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE55ZIrMBNiVuDG386CsA3QPIZUDKYD63b3Q&s" alt="Cappuccino" />
-      <p>Cappuccino</p>
-    </div>
-    <div class="gallery-item">
-      <img src="https://anerdcooks.com/wp-content/uploads/2018/08/cold_brew_coffee4-300x300.jpg" alt="Cold Brew" />
-      <p>Cold Brew</p>
-    </div>
-  </section>
-
-  <section class="info">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZdHMEaOsF8pOemdBTrLQzpQQc2-mHsNbJBQ&s" alt="Our Baristas" />
+  <div class="coffee-gallery">
     <div>
-      <h3>Expert Baristas</h3>
-      <p>Our skilled baristas bring years of experience and a deep love for coffee to every cup. Watch them craft your drink with care, precision, and a touch of artistry.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG" alt="Espresso">
+      <p>Espresso – Rs. 80</p>
     </div>
-  </section>
-
-  <section class="info">
-    <img src="https://www.decorilla.com/online-decorating/wp-content/uploads/2021/12/Cozy-white-coffee-shop-interior-design.jpg" alt="Coffee Shop Interior" />
     <div>
-      <h3>Relaxing Ambience</h3>
-      <p>Enjoy your brew in a cozy, welcoming environment. Our cafe features comfortable seating, warm lighting, and great music for the perfect coffee break.</p>
+      <img src="https://m.media-amazon.com/images/I/71kIjl1HqpL._UF350,350_QL80_.jpg" alt="Latte">
+      <p>Latte – Rs. 120</p>
     </div>
-  </section>
+    <div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE55ZIrMBNiVuDG386CsA3QPIZUDKYD63b3Q&s" alt="Cappuccino">
+      <p>Cappuccino – Rs. 150</p>
+    </div>
+    <div>
+      <img src="https://allthehealthythings.com/wp-content/uploads/2025/07/ATH-How-to-Make-Iced-Coffee-3-350x350.jpg" alt="Cold Brew">
+      <p>Cold Brew – Rs. 200</p>
+    </div>
+  </div>
 
-  <section class="form-section">
-    <h2>Order Coffee</h2>
-    <form>
-      <label>Full Name:</label>
-      <input type="text" required />
-      <label>Email:</label>
-      <input type="email" required />
-      <label>Date of Delivery:</label>
-      <input type="date" required />
-      <label>Coffee Type:</label>
-      <select required>
-        <option>Select</option>
-        <option>Espresso</option>
-        <option>Latte</option>
-        <option>Cappuccino</option>
-        <option>Cold Brew</option>
-      </select>
-      <label>Special Instructions:</label>
-      <textarea rows="4" required></textarea>
-      <button type="submit">Place Order</button>
-    </form>
-  </section>
+  <div class="order-box">
+    <h2>Place Your Coffee Order</h2>
 
-  <footer>
-    <p>&copy; 2025 Brew Bliss. All rights reserved.</p>
-  </footer>
+    <label>Espresso (Quantity)</label>
+    <input type="number" id="espresso" value="0">
+
+    <label>Latte (Quantity)</label>
+    <input type="number" id="latte" value="0">
+
+    <label>Cappuccino (Quantity)</label>
+    <input type="number" id="cappuccino" value="0">
+
+    <label>Cold Brew (Quantity)</label>
+    <input type="number" id="coldbrew" value="0">
+
+    <button onclick="calculateBill()">Generate Bill</button>
+
+    <div class="bill-box" id="billBox">
+      Purchase Order Bill!!! <br>
+      Total Price: <span id="totalPrice">Rs. 0</span>
+    </div>
+  </div>
 
 </body>
+<script src="script.js"></script>
 </html>
