@@ -2,56 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brew Bliss Coffee Shop</title>
+  <title>Brew Bliss Coffee Budget Splitter</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fdf6f0;
+    }
+    h1 {
+      background: #6f4e37;
+      color: white;
+      padding: 15px;
+      margin: 0;
+    }
+    .container {
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+    input[type="number"] {
+      padding: 8px;
+      margin: 8px;
+      width: 90px;
+      text-align: center;
+    }
+    button {
+      background: #6f4e37;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    button:hover { background: #b5895b; }
+    .result-box {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px;
+      width: 180px;
+      color: white;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .beans { background: #8B4513; }
+    .milk { background: #C68642; }
+    .sugar { background: #A0522D; }
+    .snacks { background: #D2691E; }
+  </style>
 </head>
 <body>
+  <h1>Brew Bliss Coffee Budget Splitter</h1>
+  <div class="container">
+    <h3>Enter Monthly Coffee Budget</h3>
+    <input type="number" id="totalBudget" placeholder="Rs.">
+    <h3>Distribute your budget (%)</h3>
+    Beans <input type="number" id="beans">
+    Milk <input type="number" id="milk">
+    Sugar <input type="number" id="sugar">
+    Snacks <input type="number" id="snacks"><br>
+    <button id="split">Split Budget</button>
 
-  <header>BREW BLISS COFFEE SHOP</header>
-
-  <div class="coffee-gallery">
     <div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG" alt="Espresso">
-      <p>Espresso – Rs. 80</p>
-    </div>
-    <div>
-      <img src="https://m.media-amazon.com/images/I/71kIjl1HqpL._UF350,350_QL80_.jpg" alt="Latte">
-      <p>Latte – Rs. 120</p>
-    </div>
-    <div>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE55ZIrMBNiVuDG386CsA3QPIZUDKYD63b3Q&s" alt="Cappuccino">
-      <p>Cappuccino – Rs. 150</p>
-    </div>
-    <div>
-      <img src="https://allthehealthythings.com/wp-content/uploads/2025/07/ATH-How-to-Make-Iced-Coffee-3-350x350.jpg" alt="Cold Brew">
-      <p>Cold Brew – Rs. 200</p>
+      <div class="result-box beans" id="beansResult">Beans<br>Rs. 0.00</div>
+      <div class="result-box milk" id="milkResult">Milk<br>Rs. 0.00</div>
+      <div class="result-box sugar" id="sugarResult">Sugar<br>Rs. 0.00</div>
+      <div class="result-box snacks" id="snacksResult">Snacks<br>Rs. 0.00</div>
     </div>
   </div>
 
-  <div class="order-box">
-    <h2>Place Your Coffee Order</h2>
+  <script>
+    $(document).ready(function(){
+      $("#split").click(function(){
+        let total = parseFloat($("#totalBudget").val());
+        let beans = parseFloat($("#beans").val()) || 0;
+        let milk = parseFloat($("#milk").val()) || 0;
+        let sugar = parseFloat($("#sugar").val()) || 0;
+        let snacks = parseFloat($("#snacks").val()) || 0;
 
-    <label>Espresso (Quantity)</label>
-    <input type="number" id="espresso" value="0">
-
-    <label>Latte (Quantity)</label>
-    <input type="number" id="latte" value="0">
-
-    <label>Cappuccino (Quantity)</label>
-    <input type="number" id="cappuccino" value="0">
-
-    <label>Cold Brew (Quantity)</label>
-    <input type="number" id="coldbrew" value="0">
-
-    <button onclick="calculateBill()">Generate Bill</button>
-
-    <div class="bill-box" id="billBox">
-      Purchase Order Bill!!! <br>
-      Total Price: <span id="totalPrice">Rs. 0</span>
-    </div>
-  </div>
-
+        $("#beansResult").html("Beans<br>Rs. " + ((total*beans)/100).toFixed(2));
+        $("#milkResult").html("Milk<br>Rs. " + ((total*milk)/100).toFixed(2));
+        $("#sugarResult").html("Sugar<br>Rs. " + ((total*sugar)/100).toFixed(2));
+        $("#snacksResult").html("Snacks<br>Rs. " + ((total*snacks)/100).toFixed(2));
+      });
+    });
+  </script>
 </body>
-<script src="script.js"></script>
 </html>
